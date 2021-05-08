@@ -31,7 +31,7 @@
         </div>
         <div>
             <a href="{{route('venues')}}">
-                <button class="btn btn-secondary btn-lg mt-4" style="width: 100%;">Browse all Venues</button>
+                <button class="btn btn-secondary btn-lg mt-4" style="width: 100%;">Browse All</button>
             </a>
         </div>
         <div class="row">
@@ -45,23 +45,6 @@
             <div class="col-md-4">
 
             </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-{{--            @foreach($companies as $company)--}}
-{{--                <div class="col-md-3">--}}
-{{--                    <div class="card">--}}
-
-{{--                        <img class="d-block img-fluid prop_photo" src="{{asset('uploads/logo')}}/{{ $company->logo }}" alt="Company Logo">--}}
-{{--                        <div class="card-body">--}}
-{{--                            <h5 class="card-title">{{$company->cname}}</h5>--}}
-{{--                            <p class="card-text">{{str_limit($company->description, 20)}}</p>--}}
-{{--                            <a href="{{route('company.index',[$company->id, $company->slug])}}" class="btn btn-primary">Visit Company</a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            @endforeach--}}
         </div>
     </div>
     <div class="colorbar mt-5"></div>

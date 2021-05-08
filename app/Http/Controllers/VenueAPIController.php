@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 
@@ -15,7 +14,7 @@ class VenueAPIController extends Controller
      * @return VenueResourceCollection
      */
     public function index(): VenueResourceCollection {
-        return new VenueResourceCollection(Venue::paginate());
+        return new VenueResourceCollection(Venue::paginate(100));
     }
 
     /**
@@ -32,15 +31,14 @@ class VenueAPIController extends Controller
      */
     public function store(Request $request) {
         $request->validate([
-           'venuename'=>'required',
-           'slug'=>'required',
-           'venuetype'=>'required',
-           'address'=>'required',
-           'town'=>'required',
-           'county'=>'required',
-           'postcode'=>'required',
-           'latitude'=>'required',
-           'longitude'=>'required',
+            'venuename'=>'required',
+            'venuetype'=>'required',
+            'address'=>'required',
+            'town'=>'required',
+            'county'=>'required',
+            'postcode'=>'required',
+            'latitude'=>'required',
+            'longitude'=>'required',
             'telephone'=>'required'
         ]);
 

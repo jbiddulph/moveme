@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\Http\Requests\EventPostRequest;
+use App\Http\Resources\EventResource;
+use App\Http\Resources\EventResourceCollection;
 use App\Venue;
 use Illuminate\Support\Facades\Auth;
 use Mapper;
@@ -39,17 +41,25 @@ class EventController extends Controller
 
     }
 
-    public function show($id)
-    {
-        $event = Event::findOrFail($id);
-        $venueid = $event->venue_id;
-        $thevenue = Venue::findOrFail($venueid);
-        return view('events.show', compact(
-            'event',
-            'venueid',
-            'thevenue'
-        ));
+    /**
+     * @param Event $event
+     * @return EventResource
+     */
+    public function show(Event $event): EventResourceCollection {
+        return new EventResource($event);
     }
+
+    // public function show($id)
+    // {
+    //     $event = Event::findOrFail($id);
+    //     $venueid = $event->venue_id;
+    //     $thevenue = Venue::findOrFail($venueid);
+    //     return view('events.show', compact(
+    //         'event',
+    //         'venueid',
+    //         'thevenue'
+    //     ));
+    // }
     private function notFoundMessage()
     {
 

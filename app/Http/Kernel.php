@@ -67,7 +67,8 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\Admin::class,
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
-        'check-subscription' => \App\Http\Middleware\CheckSubscription::class
+        'check-subscription' => \App\Http\Middleware\CheckSubscription::class,
+        'auth.jwt' => \Tymon\JWTAuth\Http\Middleware\Authenticate::class
     ];
 
     /**

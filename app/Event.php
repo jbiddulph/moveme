@@ -10,7 +10,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
 class Event extends Model
 {
     use Notifiable, LogsActivity, SoftDeletes;
-    protected $fillable = ['venue_id', 'eventName', 'slug', 'eventPhoto', 'eventDate', 'eventTimeStart', 'eventTimeEnd', 'eventType', 'eventCost', 'is_live'];
+    protected $fillable = ['id', 'venue_id', 'eventName', 'slug', 'eventPhoto', 'eventDate', 'eventTimeStart', 'eventTimeEnd', 'eventType', 'eventCost', 'is_live'];
 
     public function venue() {
         return $this->belongsTo(Venue::class);

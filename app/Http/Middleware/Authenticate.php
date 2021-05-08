@@ -18,4 +18,24 @@ class Authenticate extends Middleware
             return route('login');
         }
     }
+    /**
+ * @OA\SecurityScheme(
+ *     type="http",
+ *     description="Login with email and password to get the authentication token",
+ *     name="Token based Based",
+ *     in="header",
+ *     scheme="bearer",
+ *     bearerFormat="JWT",
+ *     securityScheme="apiAuth",
+ * )
+ */
+/**
+ * @OA\Get(
+ *  path="/resources",
+ *  summary="Get the list of resources",
+ *  tags={"Resource"},
+ *  @OA\Response(response=200, description="Return a list of resources"),
+ *  security={{ "apiAuth": {} }}
+ * )
+ */
 }

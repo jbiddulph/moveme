@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Hash;
 use Laravel\Cashier\Billable;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Permission\Traits\HasRoles;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
     use Notifiable, LogsActivity, Billable, HasRoles;
 
@@ -62,6 +63,15 @@ class User extends Authenticatable
     }
     public function propertyphotos(){
         return $this->hasMany(PropertyPhotos::class);
+    }
+    public function getJWTIdentifier() {
+        return $this->getKey();
+    }
+    public function getJWTCustomClaims() {
+        return [];
+    }
+    public function tasks() {
+        return $this->hasMany(Task::class, 'created_by', 'id');
     }
 
 }

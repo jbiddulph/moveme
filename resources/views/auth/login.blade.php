@@ -1,13 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="colorbar"></div>
-<img src="{{asset('/cover/pier_header.jpg')}}" style="width: 100%;" alt="Worthing Pier">
-<div class="container mt-4">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><h1>Login to BN Here</h1></div>
+                <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -72,5 +70,4 @@
         </div>
     </div>
 </div>
-<div class="colorbar mt-5"></div>
 @endsection

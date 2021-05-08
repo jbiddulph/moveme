@@ -75,7 +75,7 @@ class VenueController extends Controller
     }
 
     public function welcome() {
-        $venues = Venue::where('is_live',1)->inRandomOrder()->paginate(8);
+        $venues = Venue::where('is_live',1)->inRandomOrder()->paginate(24);
         $allvenues = Venue::paginate(38);
         Mapper::map(50.8319292,-0.3155225, [
             'zoom' => 12,

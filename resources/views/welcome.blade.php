@@ -23,6 +23,7 @@
                         @endif
                         <div class="card-body">
                             <h4 class="card-title"><a href="/venues/{{ str_slug($venue->town)}}/{{str_slug($venue->venuename)}}/{{$venue->id}}">{{$venue->venuename}}</a></h4>
+                            <h5><a href="/venues/towns/{{ str_slug($venue->town)}}/">{{$venue->town}}</a></h5>    
                         </div>
                     </div>
                 </div>

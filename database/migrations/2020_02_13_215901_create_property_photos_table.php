@@ -17,6 +17,7 @@ class CreatePropertyPhotosTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->integer('property_id');
+            $table->string('photo_title');
             $table->string('photo');
             $table->timestamps();
         });

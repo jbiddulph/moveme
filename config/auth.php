@@ -35,6 +35,7 @@ return [
     |
     */
 
+    
     'guards' => [
         'web' => [
             'driver' => 'session',
@@ -42,9 +43,8 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
-            'hash' => false,
+            'driver' => 'passport',
+            'provider' => 'users'
         ],
     ],
 

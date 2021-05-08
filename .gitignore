@@ -7,17 +7,32 @@ yarn-error.log
 bootstrap/compiled.php
 app/storage/
 
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
-
+.DS_Store
 # Laravel 5 & Lumen specific with changed public path
 public_html/storage
 public_html/hot
 
+storage/*
 storage/*.key
+storage/app/public/*
 .env
 Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+
+/node_modules
+/public/hot
+/public/storage/*
+/storage/*.key
+/vendor
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+
+.DS_Store
+storage.DS_Store
+app/storage/*

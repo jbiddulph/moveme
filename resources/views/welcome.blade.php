@@ -31,7 +31,7 @@
         </div>
         <div>
             <a href="{{route('venues')}}">
-                <button class="btn btn-secondary btn-lg mt-4" style="width: 100%;">Browse all Venues</button>
+                <button class="btn btn-secondary btn-lg mt-4" style="width: 100%;">Browse All</button>
             </a>
         </div>
         <div class="row">

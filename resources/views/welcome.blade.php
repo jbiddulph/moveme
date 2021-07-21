@@ -29,9 +29,9 @@
                 </div>
             @endforeach
         </div>
-        <div>
+        <div class="col-md-4 offset-4">
             <a href="{{route('venues')}}">
-                <button class="btn btn-secondary btn-lg mt-4" style="width: 100%;">Browse All</button>
+                <button class="btn btn-secondary btn-lg mt-4" style="width: 50%;">Browse All Venues</button>
             </a>
         </div>
         <div class="row">

@@ -64,7 +64,7 @@
                         <a class="nav-link hvr-underline-from-center" href="/subscribe">Tagin Stats</a>
                     </li>
 
-                    @elseif(Auth::user()->subscribed('main'))
+                    @elseif(Auth::user()->subscribed('main') || Auth::user()->user_type=='admin')
                     <li class="nav-item">
                         <a class="nav-link hvr-underline-from-center" href="/venue/{{ Auth::user()->venue_id }}/edit">Edit my venue</a>
                     </li>

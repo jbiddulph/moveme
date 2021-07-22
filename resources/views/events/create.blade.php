@@ -13,7 +13,9 @@
         @endif
         <div class="qr-code" style="text-align:center; padding-bottom: 10px;">
             <h3>Customer Tag-in</h3>
+            @if(isset($thevenue))
             <img src="{{url('qrcodes/'. $thevenue->town .'/customers/tagin-'.$thevenue->id.'.png')}}" width="180" />
+            @endif
         </div>
     </div>
     <div class="container mt-4">
@@ -23,7 +25,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header"><h2>Event Create for {{ $thevenue->venuename }}</h2></div>
+                    <div class="card-header"><h2>Event Create for {{ $thevenue->venuename ?? '' }}</h2></div>
                     <div class="card-body">
                         @if(Session::has('message'))
                             <div class="alert alert-success">
@@ -120,6 +122,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @if(isset($thevenue))
                                 @if($thevenue->id)
                                     <div class="row">
                                         <input type="hidden" name="venue_id" id="venue_id" value="{{$thevenue->id}}">
@@ -144,6 +147,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                @endif
                                 @endif
                                 <div class="row">
                                     <div class="col-md-4">
